@@ -7,6 +7,7 @@ import { PlanetService } from 'src/app/planets/shared/planet.service';
     <ul>
       <li><a [routerLink]="['/planets']">All Planets</a></li>
       <li><a [routerLink]="['/planets/new']">Create Planet</a></li>
+      <li><a [routerLink]="['user/profile']">Welcome John</a></li>
       <li *ngFor="let planet of planets">
         <a [routerLink]="['/planets', planet.id]">{{ planet.name }}</a>
       </li>
