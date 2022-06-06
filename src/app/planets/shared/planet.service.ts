@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,13 @@ export class PlanetService {
   constructor() {}
 
   getPlanets() {
-    return PLANETS;
+    let subject = new Subject();
+    setTimeout(() => {
+      subject.next(PLANETS);
+      subject.complete();
+    }, 100);
+    return subject;
+    //return PLANETS;
   }
 
   getPlanet(id: number) {

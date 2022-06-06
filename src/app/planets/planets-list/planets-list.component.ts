@@ -17,6 +17,8 @@ export class PlanetsListComponent implements OnInit {
   constructor(private planetService: PlanetService) {}
 
   ngOnInit(): void {
-    this.planets = this.planetService.getPlanets();
+    this.planetService
+      .getPlanets()
+      .subscribe((planets) => (this.planets = planets));
   }
 }
